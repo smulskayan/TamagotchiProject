@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_add"
+    android:padding="16dp">
+
+    <!-- Верхняя панель: Назад - Имя - Пауза -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <!-- Кнопка назад (слева) -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back"
+            android:scaleType="centerInside"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <!-- Имя питомца (по центру) -->
+        <TextView
+            android:id="@+id/gameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ТАМАГОЧИ"
+            android:textSize="28sp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/shantellsans_bold"
+            android:layout_centerInParent="true" />
+
+        <!-- Кнопка пауза (справа) -->
+        <ImageView
+            android:id="@+id/pauseButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_pause"
+            android:scaleType="centerInside"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <!-- 4 шкалы статуса В ОДНУ СТРОКУ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Шкала сытости (красная) - название и шкала в одной строке -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сытость"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:layout_marginEnd="12dp"
+                android:minWidth="100dp" />
+
+            <ProgressBar
+                android:id="@+id/hungerBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="80"
+                android:progressTint="@color/red"
+                android:progressBackgroundTint="@color/bg_color" />
+
+        </LinearLayout>
+
+        <!-- Шкала счастья (синяя) - название и шкала в одной строке -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Счастье"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:layout_marginEnd="12dp"
+                android:minWidth="100dp" />
+
+            <ProgressBar
+                android:id="@+id/happinessBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="60"
+                android:progressTint="@color/blue"
+                android:progressBackgroundTint="@color/bg_color" />
+
+        </LinearLayout>
+
+        <!-- Шкала чистоты (желтая) - название и шкала в одной строке -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Чистота"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:layout_marginEnd="12dp"
+                android:minWidth="100dp" />
+
+            <ProgressBar
+                android:id="@+id/cleanlinessBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="90"
+                android:progressTint="@color/yellow"
+                android:progressBackgroundTint="@color/bg_color" />
+
+        </LinearLayout>
+
+        <!-- Шкала бодрости (зеленая) - название и шкала в одной строке -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Бодрость"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:layout_marginEnd="12dp"
+                android:minWidth="100dp" />
+
+            <ProgressBar
+                android:id="@+id/energyBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="70"
+                android:progressTint="@color/green"
+                android:progressBackgroundTint="@color/bg_color" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Таймер игры -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Время игры: "
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/shantellsans_semibold" />
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/shantellsans_bold" />
+
+    </LinearLayout>
+
+    <!-- Картинка питомца с фоном -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp">
+
+        <!-- Фон картинки -->
+        <ImageView
+            android:id="@+id/petBackground"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:src="@drawable/circle_pink"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+
+        <!-- Картинка питомца -->
+        <ImageView
+            android:id="@+id/petImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/panda"
+            android:scaleType="centerInside"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <!-- 4 кнопки действий (2x2) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Первая строка: Покормить и Помыть -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Кнопка Покормить (красная) -->
+            <TextView
+                android:id="@+id/feedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Покормить"
+                android:textSize="18sp"
+                android:textColor="@color/red"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/button_red"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Кнопка Помыть (желтая) -->
+            <TextView
+                android:id="@+id/washButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Помыть"
+                android:textSize="18sp"
+                android:textColor="@color/yellow"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/button_yellow"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+        <!-- Вторая строка: Поиграть и Отдохнуть -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Кнопка Поиграть (синяя) -->
+            <TextView
+                android:id="@+id/playButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Поиграть"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/button_blue"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Кнопка Отдохнуть (зеленая) -->
+            <TextView
+                android:id="@+id/restButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Отдохнуть"
+                android:textSize="18sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/shantellsans_semibold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="@drawable/button_green"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

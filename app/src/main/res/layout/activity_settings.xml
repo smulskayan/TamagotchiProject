@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/bg_add">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Заголовок - разноцветный "НАСТРОЙКИ ИГРЫ" -->
+        <TextView
+            android:id="@+id/settingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="НАСТРОЙКИ ИГРЫ"
+            android:textSize="28sp"
+            android:fontFamily="@font/shantellsans_bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Введите имя питомца:"
+                android:textSize="18sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold" />
+
+            <EditText
+                android:id="@+id/petNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Например: Пушок"
+                android:textSize="16sp"
+                android:fontFamily="@font/shantellsans_regular"
+                android:textColor="@color/text_color"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <!-- 2. Выбор скорости - только "Средне" и "Быстро" -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выберите скорость игры:"
+                android:textSize="18sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold" />
+
+            <RadioGroup
+                android:id="@+id/speedRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- Средняя скорость -->
+                <RadioButton
+                    android:id="@+id/mediumRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shantellsans_semibold"
+                    android:layout_weight="1"
+                    android:text="Средне"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_color"
+                    android:buttonTint="@color/green"
+                    android:gravity="center"
+                    android:checked="true" />
+
+                <!-- Быстрая скорость -->
+                <RadioButton
+                    android:id="@+id/fastRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shantellsans_semibold"
+                    android:layout_weight="1"
+                    android:text="Быстро"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_color"
+                    android:buttonTint="@color/green"
+                    android:gravity="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Остальная часть XML остается без изменений -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выберите персонажа:"
+                android:textSize="18sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/shantellsans_semibold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3">
+
+                <!-- Персонаж 1: Панда -->
+                <LinearLayout
+                    android:id="@+id/character1Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <View
+                            android:id="@+id/character1Background"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/circle_pink"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:id="@+id/character1Image"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/panda"
+                            android:scaleType="centerInside"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/character1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Панда"
+                        android:fontFamily="@font/shantellsans_regular"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <!-- Персонаж 2: Кот -->
+                <LinearLayout
+                    android:id="@+id/character2Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <View
+                            android:id="@+id/character2Background"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/circle_pink"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:id="@+id/character2Image"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/cat"
+                            android:scaleType="centerInside"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/character2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Кот"
+                        android:fontFamily="@font/shantellsans_regular"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <!-- Персонаж 3: Лягушка -->
+                <LinearLayout
+                    android:id="@+id/character3Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <View
+                            android:id="@+id/character3Background"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/circle_pink"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:id="@+id/character3Image"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frog"
+                            android:scaleType="centerInside"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/character3Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Лягушка"
+                        android:fontFamily="@font/shantellsans_regular"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="сохранить настройки"
+            style="@style/CustomButton"
+            android:textColor="@color/pink"
+            android:gravity="center"
+            android:background="@drawable/button_pink"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="отменить"
+            style="@style/CustomButton"
+            android:textColor="@color/red"
+            android:gravity="center"
+            android:background="@drawable/button_red"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</ScrollView>
